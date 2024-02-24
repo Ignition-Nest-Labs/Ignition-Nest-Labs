@@ -18,7 +18,7 @@
             id: 3,
             Name: 'Karan Kumar',
             Role: 'Frontend Developer',
-            profile: 'karan.png',
+            profile: 'karan2.jpeg',
             link: 'https://www.linkedin.com/in/karan-kumar-416321239/'
         },
         {
@@ -57,11 +57,11 @@
             profile: 'abhin.jpg',
             link: 'https://www.linkedin.com/in/abhinnvyas/'
         },
-        {
-            id: 9,
-            Name: 'Adarsh Jha',
-            Role: 'Full Stack Developer'
-        },
+        // {
+        //     id: 9,
+        //     Name: 'Adarsh Jha',
+        //     Role: 'Full Stack Developer'
+        // },
         // {
         //     id: 10,
         //     Name: 'Garvish Jain',

@@ -38,7 +38,7 @@ function Footer() {
                 </div>
                 <div>
                     <h1 className="text-gray-100 font-medium">
-                        Designed by <span className="font-bold text-white">Sahir Khan</span>
+                    © 2024 - <span className="font-bold text-white">IGNITION NEST LABS</span>
                     </h1>
                 </div>
             </div>

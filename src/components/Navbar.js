@@ -8,7 +8,7 @@ import ArrowUp from './constants/Icons';
 const Navbar = () => {
 
     return (
-        <nav className="md:fixed w-full z-50   bg-opacity-20 backdrop-filter backdrop-blur-md bg-black flex flex-row justify-between items-center px-3 md:px-20 py-4">
+        <nav className="fixed w-full z-50 px-4 py-2 bg-opacity-20 backdrop-filter backdrop-blur-md bg-black flex flex-row  ">
             <div className='flex mx-auto container justify-between items-center'>
 
 

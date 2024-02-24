@@ -4,8 +4,8 @@ import ArrowUp from './constants/Icons';
 
 function Intro() {
     return (
-        <div className="container mx-auto px-4 py-10 relative h-screen" id='home'>
-            <div className='flex relative flex-row items-center justify-center h-full gap-x-10'>
+        <div className="container mx-auto px-4 py-10 relative  md:h-screen" id='home'>
+            <div className='flex relative flex-row items-center md:mt-0 mt-20 justify-center h-full gap-x-10'>
                 <div className='absolute md:flex hidden left-[5%] top-[20%] z-10'>
                     <Image src="/assets/Group 55.svg" alt="hero" width={100} height={100} className='w-40' />
                 </div>
@@ -30,7 +30,7 @@ function Intro() {
                         Crafting Digital <br /> Success.
                     </h1>
 
-                    <p className='text-[#9B9B9B] font-normal w-full text-sm  sm:text-base text-center mx-2'>
+                    <p className='text-[#9B9B9B] font-normal w-full text-sm  sm:text-base text-center mx-2 leading-7'>
                         Unlocking Your Digital Potential: Customized <br />
                         <span className='bg-purple-400 px-2 py-1 rounded-lg text-black mx-1'> Apps {" "}</span>
                         <span className='bg-purple-400 px-2 py-1 rounded-lg text-black'> {" "} Websites </span> and  <span className='bg-purple-400 px-2 py-1 mx-1 rounded-lg text-black'>Brand Identities</span>

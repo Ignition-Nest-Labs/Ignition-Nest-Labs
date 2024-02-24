@@ -19,7 +19,7 @@ function Story() {
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent'
                     }}>Our Story</h1>
-                    <p className='text-[#9B9B9B] font-normal text-base mt-2 text-center'>
+                    <p className='text-[#9B9B9B] font-normal text-base mt-2 sm:text-start text-center'>
                         At Ignition Nest Labs, we simplify freelancer discovery. Our skilled freelancers offer quality services at affordable prices, specializing in web development, UI/UX design, and creating social media presence. Partner with us for top-tier talent and exceed your expectations. Contact us to begin.
                     </p>
                 </div>
