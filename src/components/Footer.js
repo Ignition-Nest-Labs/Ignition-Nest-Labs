@@ -6,7 +6,7 @@ function Footer() {
     return (
         <footer className="container mx-auto px-4 py-10 mt-20 mb-10" id='contact'>
             <div className="flex flex-col items-center justify-center bg-[#070707] border-[1px] border-[#1E1E1E] rounded-xl py-14 px-2 md:px-10 lg:px-40 w-full">
-                <div className="w-full lg:w-[40%] text-center">
+                <div className="w-full lg:w-[50%] text-center">
                     <h1 className="text-2xl md:text-4xl font-bold uppercase" style={{
                         background: 'linear-gradient(90deg, #FFF 3.8%, #020202 146.47%)',
                         WebkitBackgroundClip: 'text',

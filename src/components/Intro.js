@@ -38,7 +38,7 @@ function Intro() {
                     </p>
 
                     
-                    <div className='border-[2px] border-[#9B9B9B]  mt-2 bg-transparent py-2 flex flex-row items-center justify-between px-2 sm:px-4 ' style={{
+                    <div className='border-[2px] border-[#9B9B9B]   mt-10 bg-transparent py-2 flex flex-row items-center justify-between px-2 sm:px-4 ' style={{
                         borderRadius: '29.75px',
                         border: '0.85px solid #9B9B9B',
                         background: 'rgba(35, 35, 35, 0.20)',

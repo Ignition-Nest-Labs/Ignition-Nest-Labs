@@ -73,8 +73,8 @@ export default AboutUs
 
 
 const SkillTag = ({ skill }) => (
-    <div className='text-white hover:bg-white/20 cursor-pointer duration-300 border-[2px] border-[#9B9B9B] rounded-full px-5 py-2 my-2 flex items-center justify-center'>
-        <h1 className='text-center text-base md:text-xl font-semibold'>{skill}</h1>
+    <div className='text-white hover:bg-white/20 cursor-pointer duration-300 border-[2px] border-[#9B9B9B] border-opacity-40 rounded-full px-5 py-2 my-2 flex items-center justify-center'>
+        <h1 className='text-center text-base md:text-lg font-semibold'>{skill}</h1>
     </div>
 );
 const skills = ['React JS', 'Next JS', 'Tailwind CSS', 'Node JS', 'Express JS', 'Mongo DB', 'Nest JS', 'Django', 'React Native', 'Flutter', 'UX', 'UI', 'Figma', 'After Effects', 'Photoshop'];

@@ -87,7 +87,9 @@
         {
             id:12,
             Name: 'Garvish Jain',
-            Role: 'Flutter Developer'  
+            Role: 'Flutter Developer',  
+            profile: 'garvish.png',
+            link:"https://www.linkedin.com/in/imgarvish",
         },
         {
             id:13,

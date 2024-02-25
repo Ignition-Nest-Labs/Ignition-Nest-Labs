@@ -12,9 +12,9 @@ const Navbar = () => {
             <div className='flex mx-auto container justify-between items-center'>
 
 
-                <div className='flex-shrink-0 md:mt-0 mt-2 mb-0'>
+                <Link href="/" className='flex-shrink-0 md:mt-0 mt-2 mb-0'>
                     <Image src="/assets/logo.png" alt="Logo" width={100} height={100} className='w-14' />
-                </div>
+                </Link>
 
                 <div className={`md:flex hidden items-center space-x-6`}>
                     <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">

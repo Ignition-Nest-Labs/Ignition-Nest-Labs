@@ -19,10 +19,10 @@ function Teams() {
             }}>Our Team</h1>
 
             <div className="mb-5 flex justify-center gap-4 ">
-                <button className={`py-2 px-4 rounded-lg ${activeTab === 'Core' ? 'bg-gray-500 text-white' : 'border-[1px] border-gray-100 border-opacity-20 text-gray-500'}`} onClick={() => setActiveTab('Core')}>
+                <button className={`py-2 px-4 rounded-full ${activeTab === 'Core' ? 'bg-white text-black' : 'border-[1px] border-gray-100 border-opacity-20 text-gray-500'}`} onClick={() => setActiveTab('Core')}>
                     Core Members
                 </button>
-                <button className={`py-2 px-4 rounded-lg ${activeTab === 'Member' ? 'bg-gray-500 text-white' : 'border-[1px] border-gray-100 border-opacity-20 text-gray-500'}`} onClick={() => setActiveTab('Member')}>
+                <button className={`py-2 px-4 rounded-full ${activeTab === 'Member' ? 'bg-white text-black' : 'border-[1px] border-gray-100 border-opacity-20 text-gray-500'}`} onClick={() => setActiveTab('Member')}>
                     Members
                 </button>
             </div>
