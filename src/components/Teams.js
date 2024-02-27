@@ -47,7 +47,7 @@ export default Teams;
 const TeamCard = ({ Name, Role, link, profile }) => {
     return (
         <div className="flex flex-col items-center justify-center bg-[#070707] border-[1px] border-[#1E1E1E] px-10 py-5 rounded-xl relative">
-            <Image src={`/assets/teams/${profile}`} alt="Team" width={100} height={100} className="w-32 h-32 aspect-square object-cover rounded-full" />
+            <Image src={`/assets/teams/${profile}`} alt="Team" width={500} height={500} className="w-32 h-32 aspect-square object-cover rounded-full" />
             <div className="flex flex-col items-center mt-4">
                 <h1 className="text-white font-bold text-2xl">{Name}</h1>
                 <h2 className="text-[#9B9B9B] font-normal text-base">{Role}</h2>
