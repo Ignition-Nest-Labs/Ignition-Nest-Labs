@@ -76,13 +76,16 @@
         {
             id: 10,
             Name: 'Adarsh Jha',
-            Role: 'Full Stack Developer'
+            Role: 'Full Stack Developer',
+            link:'https://www.linkedin.com/in/aadarshJha1401/',
            
         },
         {
             id: 11,
             Name: 'Uttam Bhatiya',
-            Role: 'UI/UX Designer'
+            Role: 'UI/UX Designer',
+            profile: 'uttam.jpeg',
+            link:'www.linkedin.com/in/uttambhatiya'
         },
         {
             id:12,

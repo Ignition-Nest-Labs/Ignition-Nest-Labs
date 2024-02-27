@@ -3,6 +3,9 @@ import Image from 'next/image';
 import ArrowUp from './constants/Icons';
 
 function Footer() {
+    const handleClick = () => {
+        window.open('https://calendly.com/ignitionnestlab/30min?month=2024-02', '_blank');
+    }
     return (
         <footer className="container mx-auto px-4 py-10 mt-20 mb-10" id='contact'>
             <div className="flex flex-col items-center justify-center bg-[#070707] border-[1px] border-[#1E1E1E] rounded-xl py-14 px-2 md:px-10 lg:px-40 w-full">
@@ -18,7 +21,7 @@ function Footer() {
                         Join forces with us to turn your digital aspirations into tangible results. Collaborate with Ignition Nest Labs and propel your enterprise towards triumph!
                     </p>
 
-                    <div className='border-[2px] border-[#9B9B9B]  mt-2 bg-transparent py-2 flex flex-row items-center justify-between px-2 sm:px-4 ' style={{
+                    <form onSubmit={handleClick} className='border-[2px] border-[#9B9B9B]  mt-2 bg-transparent py-2 flex flex-row items-center justify-between px-2 sm:px-4 ' style={{
                         borderRadius: '29.75px',
                         border: '0.85px solid #9B9B9B',
                         background: 'rgba(35, 35, 35, 0.20)',
@@ -29,7 +32,7 @@ function Footer() {
                             <button className='font-semibold uppercase text-xs sm:text-sm'>Let's Talk</button>
                             <ArrowUp width={20} height={20} className='group-hover:stroke-white stroke-current' />
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div className="flex flex-col items-center mt-10">

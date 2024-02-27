@@ -29,11 +29,13 @@ const Navbar = () => {
 
 
 
+<Link href="https://calendly.com/ignitionnestlab/30min?month=2024-02" target='_blank'>
 
                 <button className='group bg-transparent hover:bg-white hover:text-black duration-500 flex h-10 uppercase items-center justify-center px-5 rounded-full border-[1px] border-gray-100 cursor-pointer text-xs font-medium text-white'>
                     Let's Talk
                     <ArrowUp width={20} height={20} className="stroke-current group-hover:stroke-black" />
                 </button>
+</Link>
 
 
                 {/* <button

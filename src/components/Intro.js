@@ -3,6 +3,9 @@ import Image from 'next/image';
 import ArrowUp from './constants/Icons';
 
 function Intro() {
+    const handleClick = () => {
+        window.open('https://calendly.com/ignitionnestlab/30min?month=2024-02', '_blank');
+    }
     return (
         <div className="container mx-auto px-4 py-10 relative  md:h-screen" id='home'>
             <div className='flex relative flex-row items-center md:mt-0 mt-20 justify-center h-full gap-x-10'>
@@ -38,7 +41,7 @@ function Intro() {
                     </p>
 
                     
-                    <div className='border-[2px] border-[#9B9B9B]   mt-10 bg-transparent py-2 flex flex-row items-center justify-between px-2 sm:px-4 ' style={{
+                    <form onSubmit={handleClick} className='border-[2px] border-[#9B9B9B]   mt-10 bg-transparent py-2 flex flex-row items-center justify-between px-2 sm:px-4 ' style={{
                         borderRadius: '29.75px',
                         border: '0.85px solid #9B9B9B',
                         background: 'rgba(35, 35, 35, 0.20)',
@@ -49,7 +52,7 @@ function Intro() {
                             <button className='font-semibold uppercase text-xs sm:text-sm'>Let's Talk</button>
                             <ArrowUp width={20} height={20} className='group-hover:stroke-white stroke-current' />
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
