@@ -75,7 +75,7 @@
         },
         {
             id: 10,
-            Name: 'Adarsh Jha',
+            Name: 'Aadarsh Jha',
             Role: 'Full Stack Developer',
             link:'https://www.linkedin.com/in/aadarshJha1401/',
            
@@ -97,7 +97,9 @@
         {
             id:13,
             Name: 'Yash Prajapati',
-            Role: 'Frontend Developer'
+            Role: 'Frontend Developer',
+            profile:'yash.png',
+            link:'https://www.linkedin.com/in/yash-prajapati-665a35213?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
         },
         {
             id:14,
