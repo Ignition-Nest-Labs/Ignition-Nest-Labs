@@ -12,10 +12,12 @@ function Page() {
                 </h1>
             </div>
 
-            <div className='relative flex flex-row justify-evenly items-center w-full '>
-                <div className=' flex items-center justify-center rounded-full w-[400px] h-[600px]  '>
-                    <img src="/assets/teams/prachi.png" alt="karan" className=' object-contain rounded-full scale-[76%] absolute  z-10' />
-                    <Image src="/assets/profileCover.svg" alt="Cover" width={400} height={600} className='rounded-full  ' />
+            <div className='relative flex flex-row justify-evenly items-center h-[600px] w-full '>
+                <div className=' relative flex items-center justify-center rounded-full aspect-square w-[400px] '>
+                    <div className='absolute w-[300px] bottom-[55px] flex items-end overflow-hidden h-[500px] rounded-full '>
+                        <img src="/assets/teams/rohit.png" alt="karan" className=' aspect-square grayscale bottom-0 object-cover translate-x-[6px] translate-y-[-36px] scale-[140%] ' />
+                    </div>
+                    <Image src="/assets/profileCover.svg" alt="Cover" width={400} height={400} className='rounded-full  ' />
                 </div>
 
                 {/* <div className='flex flex-col items-start '>
