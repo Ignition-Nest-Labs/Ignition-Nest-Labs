@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import ArrowUp from './constants/Icons';
+import { ArrowUp } from '@/components/constants/Icons';
 
 function Intro() {
     const handleClick = () => {
