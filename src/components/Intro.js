@@ -1,47 +1,95 @@
 import React from 'react';
 import Image from 'next/image';
 import ArrowUp from './constants/Icons';
+import Link from "next/link";
 
 function Intro() {
-    const handleClick = () => {
-        window.open('https://calendly.com/ignitionnestlab/30min?month=2024-02', '_blank');
-    }
-    return (
-        <div className="container mx-auto px-4 py-10 relative  md:h-screen" id='home'>
-            <div className='flex relative flex-row items-center md:mt-0 mt-20 justify-center h-full gap-x-10'>
-                <div className='absolute md:flex hidden left-[5%] top-[20%] z-10'>
-                    <Image src="/assets/Group 55.svg" alt="hero" width={100} height={100} className='w-40' />
-                </div>
-                <div className='absolute md:flex hidden right-[2%] bottom-[5%] z-10'>
-                    <Image src="/assets/Group.svg" alt="hero" width={100} height={100} className='w-auto' />
-                </div>
-                <div className='absolute md:flex hidden right-[5%] top-[30%] z-10'>
-                    <Image src="/assets/Group 56.svg" alt="hero" width={100} height={100} className='w-40' />
-                </div>
-                <div className='absolute md:flex hidden left-[5%] bottom-[20%] z-10'>
-                    <Image src="/assets/Group 57.svg" alt="hero" width={100} height={100} className='w-40' />
-                </div>
-                <div className='absolute md:flex hidden left-[25%] top-[40%] z-10'>
-                    <Image src="/assets/Vector 3.svg" alt="hero" width={100} height={100} />
-                </div>
-                <div className='flex flex-col items-center   justify-center z-10'>
-                    <h1 className='text-[30px] sm:text-[64px] font-[800] text-center' style={{
-                        background: 'linear-gradient(90deg, #FFF 3.8%, #020202 146.47%)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent'
-                    }}>
-                        Crafting Digital <br /> Success.
-                    </h1>
+  const handleClick = () => {
+    window.open(
+      "https://calendly.com/ignitionnestlab/30min?month=2024-02",
+      "_blank"
+    );
+  };
+  return (
+    <div
+      className="container mx-auto px-4 py-10 relative  md:h-screen"
+      id="home"
+    >
+      <div className="flex relative flex-row items-center md:mt-0 mt-20 justify-center h-full gap-x-10">
+        <div className="absolute md:flex hidden left-[5%] top-[20%] z-10">
+          <Image
+            src="/assets/Group 55.svg"
+            alt="hero"
+            width={100}
+            height={100}
+            className="w-40"
+          />
+        </div>
+        <div className="absolute md:flex hidden right-[2%] bottom-[5%] z-10">
+          <Image
+            src="/assets/Group.svg"
+            alt="hero"
+            width={100}
+            height={100}
+            className="w-auto"
+          />
+        </div>
+        <div className="absolute md:flex hidden right-[5%] top-[30%] z-10">
+          <Image
+            src="/assets/Group 56.svg"
+            alt="hero"
+            width={100}
+            height={100}
+            className="w-40"
+          />
+        </div>
+        <div className="absolute md:flex hidden left-[5%] bottom-[20%] z-10">
+          <Image
+            src="/assets/Group 57.svg"
+            alt="hero"
+            width={100}
+            height={100}
+            className="w-40"
+          />
+        </div>
+        <div className="absolute md:flex hidden left-[25%] top-[40%] z-10">
+          <Image
+            src="/assets/Vector 3.svg"
+            alt="hero"
+            width={100}
+            height={100}
+          />
+        </div>
+        <div className="flex flex-col items-center   justify-center z-10">
+          <h1
+            className="text-[30px] sm:text-[64px] font-[800] text-center"
+            style={{
+              background: "linear-gradient(90deg, #FFF 3.8%, #020202 146.47%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Crafting Digital <br /> Success.
+          </h1>
 
-                    <p className='text-[#9B9B9B] font-normal w-full text-sm  sm:text-base text-center mx-2 leading-7'>
-                        Unlocking Your Digital Potential: Customized <br />
-                        <span className='bg-purple-400 px-2 py-1 rounded-lg text-black mx-1'> Apps {" "}</span>
-                        <span className='bg-purple-400 px-2 py-1 rounded-lg text-black'> {" "} Websites </span> and  <span className='bg-purple-400 px-2 py-1 mx-1 rounded-lg text-black'>Brand Identities</span>
-                        Crafted <br /> with Care, Exclusively for Your Vision!
-                    </p>
+          <p className="text-[#9B9B9B] font-normal w-full text-sm  sm:text-base text-center mx-2 leading-7">
+            Unlocking Your Digital Potential: Customized <br />
+            <span className="bg-purple-400 px-2 py-1 rounded-lg text-black mx-1">
+              {" "}
+              Apps{" "}
+            </span>
+            <span className="bg-purple-400 px-2 py-1 rounded-lg text-black">
+              {" "}
+              Websites{" "}
+            </span>{" "}
+            and{" "}
+            <span className="bg-purple-400 px-2 py-1 mx-1 rounded-lg text-black">
+              Brand Identities
+            </span>
+            Crafted <br /> with Care, Exclusively for Your Vision!
+          </p>
 
-                    
-                    <form onSubmit={handleClick} className='border-[2px] border-[#9B9B9B]   mt-10 bg-transparent py-2 flex flex-row items-center justify-between px-2 sm:px-4 ' style={{
+          {/* <form onSubmit={handleClick} className='border-[2px] border-[#9B9B9B]   mt-10 bg-transparent py-2 flex flex-row items-center justify-between px-2 sm:px-4 ' style={{
                         borderRadius: '29.75px',
                         border: '0.85px solid #9B9B9B',
                         background: 'rgba(35, 35, 35, 0.20)',
@@ -52,11 +100,17 @@ function Intro() {
                             <button className='font-semibold uppercase text-xs sm:text-sm'>Let's Talk</button>
                             <ArrowUp width={20} height={20} className='group-hover:stroke-white stroke-current' />
                         </div>
-                    </form>
-                </div>
-            </div>
+                    </form> */}
+
+          <Link href="/apply">
+            <button className="bg-green-700 text-white font-semibold uppercase text-xs sm:text-sm mt-10 px-20 py-2 rounded-lg hover:bg-purple-600 animate-bounce duration-500">
+              Apply Now
+            </button>
+          </Link>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default Intro;
