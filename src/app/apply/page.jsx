@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast, Toaster } from "sonner";
-import { db } from "../../lib/firebase.config";
+import { db, storage } from "../../lib/firebase.config"; // Firebase imports
 import { addDoc, collection } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export default function JobApplicationForm() {
   const {
@@ -16,44 +17,67 @@ export default function JobApplicationForm() {
     formState: { errors },
   } = useForm();
   const [submitting, setSubmitting] = useState(false);
-  const [otherRole, setOtherRole] = useState(""); // Track the other role input
+  const [otherRole, setOtherRole] = useState(""); // Track custom role input
 
-  const removeUndefinedFields = (obj) => {
-    return Object.fromEntries(
-      Object.entries(obj).filter(([_, value]) => value !== undefined && value !== "")
+  // Utility to filter out undefined or empty values
+  const removeUndefinedFields = (obj) =>
+    Object.fromEntries(
+      Object.entries(obj).filter(
+        ([_, value]) => value !== undefined && value !== ""
+      )
     );
-  };
-  
+
   const onSubmit = async (data) => {
     setSubmitting(true);
+
     try {
-      // Remove undefined or empty fields
+      // Handle resume file upload to Firebase Storage
+      const resumeFile = data.resume[0]; // Get the uploaded file
+
+      // Create a unique path for the resume file
+      const resumeRef = ref(
+        storage,
+        `resumes/${Date.now()}_${resumeFile.name}`
+      );
+
+      // Upload the file to Firebase Storage
+      await uploadBytes(resumeRef, resumeFile);
+
+      // Get the download URL of the uploaded file
+      const resumeURL = await getDownloadURL(resumeRef);
+
+      // Clean and prepare the data for Firestore
+      const roles = data.applyFor || [];
+      if (otherRole) roles.push(otherRole);
+
       const cleanedData = removeUndefinedFields({
         name: data.name,
         collegeEmail: data.collegeEmail,
         department: data.department,
         institute: data.institute,
-        applyFor: data.applyFor,
+        applyFor: roles,
         contactNumber: data.contactNumber,
         currentYear: data.currentYear,
         currentSemester: data.currentSemester,
         linkedinUrl: data.linkedinUrl,
-        createdAt: new Date().toISOString(), // Add timestamp
+        resumeURL, // Add resume URL to Firestore data
+        createdAt: new Date().toISOString(), // Timestamp
       });
-  
-      // Store form data in Firestore with auto-generated ID
+
+      // Store the cleaned data in Firestore
       await addDoc(collection(db, "interns"), cleanedData);
-  
-      // Show success message
+
+      // Show success toast and reset form
       toast.success("Application submitted successfully!");
       reset(); // Reset the form
     } catch (error) {
-      console.error(error);
+      console.error("Error submitting form:", error);
       toast.error("Failed to submit application. Please try again.");
     } finally {
       setSubmitting(false);
     }
   };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#0D0D0D] text-white">
       <Toaster position="top-right" />
@@ -100,7 +124,12 @@ export default function JobApplicationForm() {
           <div>
             <label className="block font-medium">Apply For</label>
             <div className="space-y-2 mt-2">
-              {["Figma Designer", "Frontend Developer", "Backend Developer", "App Developer"].map((role) => (
+              {[
+                "Figma Designer",
+                "Frontend Developer",
+                "Backend Developer",
+                "App Developer",
+              ].map((role) => (
                 <label key={role} className="flex items-center space-x-3">
                   <Checkbox
                     {...register("applyFor")}
@@ -158,7 +187,9 @@ export default function JobApplicationForm() {
                 type="number"
                 placeholder="Year"
                 className="w-full mt-2 bg-[#333] border border-gray-600 rounded-lg p-3 text-white"
-                {...register("currentYear", { required: "Current year is required" })}
+                {...register("currentYear", {
+                  required: "Current year is required",
+                })}
               />
               {errors.currentYear && (
                 <p className="text-red-500 text-sm">
@@ -172,7 +203,9 @@ export default function JobApplicationForm() {
                 type="number"
                 placeholder="Semester"
                 className="w-full mt-2 bg-[#333] border border-gray-600 rounded-lg p-3 text-white"
-                {...register("currentSemester", { required: "Current semester is required" })}
+                {...register("currentSemester", {
+                  required: "Current semester is required",
+                })}
               />
               {errors.currentSemester && (
                 <p className="text-red-500 text-sm">
@@ -189,7 +222,9 @@ export default function JobApplicationForm() {
               type="url"
               placeholder="Your LinkedIn profile URL"
               className="w-full mt-2 bg-[#333] border border-gray-600 rounded-lg p-3 text-white"
-              {...register("linkedinUrl", { required: "LinkedIn URL is required" })}
+              {...register("linkedinUrl", {
+                required: "LinkedIn URL is required",
+              })}
             />
             {errors.linkedinUrl && (
               <p className="text-red-500 text-sm">
