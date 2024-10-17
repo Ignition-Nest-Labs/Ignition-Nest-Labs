@@ -64,12 +64,13 @@ export default function JobApplicationForm() {
         createdAt: new Date().toISOString(), // Timestamp
       });
 
+      console.log("Cleaned data:", cleanedData);
       // Store the cleaned data in Firestore
       await addDoc(collection(db, "interns"), cleanedData);
 
       // Show success toast and reset form
       toast.success("Application submitted successfully!");
-      reset(); // Reset the form
+      // reset(); // Reset the form
     } catch (error) {
       console.error("Error submitting form:", error);
       toast.error("Failed to submit application. Please try again.");
@@ -131,19 +132,22 @@ export default function JobApplicationForm() {
                 "App Developer",
               ].map((role) => (
                 <label key={role} className="flex items-center space-x-3">
-                  <Checkbox
-                    {...register("applyFor")}
+                  <input
+                    type="checkbox"
                     value={role}
+                    {...register("applyFor")}
                     className="form-checkbox h-5 w-5 text-blue-600"
                   />
                   <span>{role}</span>
                 </label>
               ))}
+
               {/* Other Role */}
               <label className="flex items-center space-x-3 mt-2">
-                <Checkbox
-                  {...register("applyFor")}
+                <input
+                  type="checkbox"
                   value="Other"
+                  {...register("applyFor")}
                   className="form-checkbox h-5 w-5 text-blue-600"
                 />
                 <Input
